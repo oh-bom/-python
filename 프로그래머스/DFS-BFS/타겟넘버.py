@@ -1,3 +1,4 @@
+#!
 #다른분꺼 보고 공부(by.코린이)
 def solution(numbers, target):
     cnt=0
