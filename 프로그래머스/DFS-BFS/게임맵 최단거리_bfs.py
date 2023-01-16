@@ -10,9 +10,11 @@ def solution(maps):
         q=deque()
         q.append((x,y,1))
 
+       
         while q:
             x,y,distance=q.popleft()
 
+            print(x,y,distance)
             if x==n-1 and y==m-1:
                 return distance
             if maps[x][y]==0:#막혀서 못가는 부분
@@ -24,9 +26,9 @@ def solution(maps):
             if y+1 < m:
                 q.append((x, y+1, distance+1))
             if y-1 >= 0:
-                q.append((y-1, x, distance+1))
+                q.append((x, y-1, distance+1))
             if x-1 >= 0:
-                q.append((y, x-1, distance+1))
+                q.append((x-1, y, distance+1))
 
         return -1
     return bfs(0,0)
