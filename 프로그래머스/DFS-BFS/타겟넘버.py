@@ -9,7 +9,6 @@ def solution(numbers, target):
         
         if i==len(numbers):
             if sum==target:
-                print(numbers)
                 cnt+=1
             return
 
@@ -17,10 +16,12 @@ def solution(numbers, target):
         dfs(i+1,1,sum)
         dfs(i+1,-1,sum)
 
+    
     for sign in [-1,1]:
         dfs(0,sign,0)
 
-    return int(cnt/2)
+    return cnt
 
 # print("why")
 print(solution([4,1,2,1],4))
+print(solution([1,1,1,1,1],3))

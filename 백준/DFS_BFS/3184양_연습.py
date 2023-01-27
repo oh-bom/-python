@@ -17,13 +17,13 @@ def solution(r,c,field):
         if field[x][y]=='v':wolf+=1
         elif field[x][y]=='o':sheep+=1
         
-        print(f'wolf:{wolf}, sheep:{sheep}')
+        #print(f'wolf:{wolf}, sheep:{sheep}')
         
         for i in range(4):
-            x+=dx[i]
-            y+=dy[i]
+            nx=x+dx[i]
+            ny=y+dy[i]
       
-            if 0<=x<=r-1 and 0 <=y<=c-1 and visited[x][y]==0 and field[x][y]!='#':dfs(x,y)
+            if 0<=nx<=r-1 and 0 <=ny<=c-1 and visited[nx][ny]==0 and field[nx][ny]!='#':dfs(nx,ny)
             
             
     for i in range(r):
@@ -44,6 +44,7 @@ def solution(r,c,field):
                 survivied_sheep+=sheep
     
     print(survivied_sheep,survived_wolf)
+    return 0
 
 
 r,c=map(int,input().split(" "))
