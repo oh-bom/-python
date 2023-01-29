@@ -44,7 +44,7 @@ def solution(r,c,field):
                 survivied_sheep+=sheep
     
     print(survivied_sheep,survived_wolf)
-    return 0
+    return
 
 
 r,c=map(int,input().split(" "))

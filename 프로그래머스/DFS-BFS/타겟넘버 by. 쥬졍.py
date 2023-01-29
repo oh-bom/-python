@@ -15,4 +15,5 @@ def solution(numbers,target):
     return count
 
 print(solution([4, 1, 2, 1],4))
-            
+
+        
