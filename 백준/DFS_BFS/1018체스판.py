@@ -1,4 +1,6 @@
 import sys
+
+#내가 해봤던 코드,,
 def solution(r,c,board):
     
     def dfs(x,y,board2):
@@ -47,9 +49,32 @@ def solution(r,c,board):
         
     return min
             
-    
-    
-
+            
+#풀이
+def solution2(r,c,board):
+    compare=[]
+    for a in range(r-7):
+        for b in range(c-7):
+            w_index=0
+            b_index=0
+            
+            for i in range(a,a+8):
+                for j in range(b,b+8):
+                    if (i+j)%2==0:#시작하는 색이 나와야하는 칸
+                        if board[i][j]=='B':
+                            w_index+=1
+                        else:b_index+=1
+                        
+                    else:
+                        if board[i][j]=='B':
+                            b_index+=1
+                        else:w_index+=1
+            
+            compare.append(w_index)
+            compare.append(b_index)
+            
+    return min(compare)
+            
 #input=sys.stdin.read()
 r,c=map(int,input().split())
 board=[]
@@ -57,4 +82,6 @@ board2=[]
 for _ in range(r):
     board.append(list(input()))
     
-solution(r,c,board)
+#solution(r,c,board)
+print(board)
+print(solution2(r,c,board))
